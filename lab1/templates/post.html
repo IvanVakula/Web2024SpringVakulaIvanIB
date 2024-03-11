@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-4">
+
+    <!-- Шапка с информацией о посте -->
+    <header class="mb-4 border-bottom">
+        <h1 class="fw-bold">{{ post.title }}</h1>
+        <div class="text-muted fst-italic">Автор: {{ post.author }}, опубликовано: {{ post.date.strftime("%d.%m.%Y") }}</div>
+    </header>
+
+    <!-- Изображение поста с большим размером -->
+    <figure class="mb-4 text-center">
+        <img src="{{ url_for('static', filename='images/' + post.image_id) }}" class="img-fluid rounded shadow" style="max-height: 500px;">
+    </figure>
+
+    <!-- Основное содержание поста -->
+    <article class="mb-5">
+        <p class="lead">{{ post.text }}</p>
+    </article>
+
+    <!-- Форма комментариев -->
+    <section class="comments mb-5">
+        <h2>Оставьте комментарий</h2>
+        <form class="mb-3">
+            <textarea class="form-control mb-3" rows="4" placeholder="Ваш комментарий..."></textarea>
+            <button type="submit" class="btn btn-success">Отправить</button>
+        </form>
+    </section>
+
+    <!-- Комментарии -->
+    <section class="comment-section">
+        {% for comment in post.comments %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="d-flex mb-3">
+                    <img src="{{ url_for('static', filename='images/avatar.jpg') }}" class="rounded-circle flex-shrink-0 me-3" style="width: 50px; height: 50px;">
+                    <div>
+                        <h5 class="mt-0">{{ comment.author }}</h5>
+                        <p>{{ comment.text }}</p>
+                    </div>
+                </div>
+                {% for subcomment in comment.replies %}
+                <div class="ms-5">
+                    <div class="d-flex">
+                        <img src="{{ url_for('static', filename='images/avatar.jpg') }}" class="rounded-circle flex-shrink-0 me-3" style="width: 40px; height: 40px;">
+                        <div>
+                            <h6 class="mt-0">{{ subcomment.author }}</h6>
+                            <p>{{ subcomment.text }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+</div>
+{% endblock %}
