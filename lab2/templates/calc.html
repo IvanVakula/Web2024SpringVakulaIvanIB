@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>форма!</h1>
+
+
+<form method="GET" class="d-flex">
+    <input class="form-control" id="exampleFormControlInput1" rows="3" value={{request.args.get('operand1', '')}} name="operand1" placeholder="Левый операнд">
+
+    <select class="form-select" aria-label="Действие" name="action">
+        <option selected disabled>Действие</option>
+        <option {%if request.args.get('action') == '+'%}selected{%endif%} value="+">+</option>
+        <option {%if request.args.get('action') == '-'%}selected{%endif%} value="-">-</option>
+        <option {%if request.args.get('action') == '*'%}selected{%endif%} value="*">*</option>
+        <option {%if request.args.get('action') == '/'%}selected{%endif%} value="/">/</option>
+    </select>
+
+    <input class="form-control" id="exampleFormControlInput2" rows="3" value={{request.args.get('operand1', '')}} name="operand2" placeholder="Правый операнд">
+    <button type="submit" class="btn btn-primary mb-2">Отправить</button>
+</form>
+
+{% if result %}
+    <h1>Результат: {{result}}</h1>
+{% endif %}
+
+{% endblock %}
+

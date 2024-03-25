@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Форма для ввода номера телефона</h1>
+
+<form method="POST">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Номер телефона</label>
+        <input type="text" class="form-control {% if error_message %}is-invalid{% endif %}" id="exampleFormControlInput1" name="param1" value="{{ phone_number }}">
+        <div class="invalid-feedback">
+            {{ error_message }}
+        </div>
+    </div>
+    {% if phone_number and not error_message %}
+    <div class="mb-3">
+        <label class="form-label">Отформатированный номер:</label>
+        <input type="text" readonly class="form-control-plaintext" value="{{ phone_number }}">
+    </div>
+    {% endif %}
+    <button type="submit" class="btn btn-primary">Проверить</button>
+</form>
+
+{% endblock %}
