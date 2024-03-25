@@ -84,6 +84,7 @@ def form2():
     return render_template('form2.html', error_message=error_message, phone_number=phone_number, request=request)
 
 
-application.run(debug=True)
+if name == '__main__':
+    app.run(debug=True)
 
 
