@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e351555b-6962-47b8-ac6e-3565ad5b3c4e" name="Changes" comment="LABA2CDELANNAYA. TOP" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;IvanVakula&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="8d45d3c8-a7ab-44f6-847c-59bfd55b28fa" />
+        <option name="url" value="https://github.com/IvanVakula/Web2024SpringVakulaIvanIB.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2cH9XVbZ5DHxQ2hPD2tUZNEHkVs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.app.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/user/PycharmProjects/web",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\web\lab2\templates" />
+      <recent name="C:\Users\user\PycharmProjects\web" />
+      <recent name="C:\Users\user\PycharmProjects\web\lab2" />
+      <recent name="C:\Users\user\PycharmProjects\web\lab1\templates" />
+      <recent name="C:\Users\user\PycharmProjects\web\lab1" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e351555b-6962-47b8-ac6e-3565ad5b3c4e" name="Changes" comment="" />
+      <created>1707757676241</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707757676241</updated>
+    </task>
+    <task id="LOCAL-00001" summary="laba1_norm">
+      <option name="closed" value="true" />
+      <created>1710182419678</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710182419678</updated>
+    </task>
+    <task id="LOCAL-00002" summary="hello.py remove">
+      <option name="closed" value="true" />
+      <created>1710182694655</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710182694655</updated>
+    </task>
+    <task id="LOCAL-00003" summary="gitignore add">
+      <option name="closed" value="true" />
+      <created>1710182773176</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710182773176</updated>
+    </task>
+    <task id="LOCAL-00004" summary="LABA2CDELANNAYA. TOP">
+      <option name="closed" value="true" />
+      <created>1711388051416</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711388051416</updated>
+    </task>
+    <task id="LOCAL-00005" summary="LABA2CDELANNAYA. TOP">
+      <option name="closed" value="true" />
+      <created>1711390247988</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711390247988</updated>
+    </task>
+    <task id="LOCAL-00006" summary="LABA2CDELANNAYA. TOP">
+      <option name="closed" value="true" />
+      <created>1711391028352</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711391028352</updated>
+    </task>
+    <task id="LOCAL-00007" summary="LABA2CDELANNAYA. TOP">
+      <option name="closed" value="true" />
+      <created>1711391057545</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711391057545</updated>
+    </task>
+    <task id="LOCAL-00008" summary="LABA2CDELANNAYA. TOP">
+      <option name="closed" value="true" />
+      <created>1711391067982</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711391067982</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="laba1_norm" />
+    <MESSAGE value="hello.py remove" />
+    <MESSAGE value="gitignore add" />
+    <MESSAGE value="LABA2CDELANNAYA. TOP" />
+    <option name="LAST_COMMIT_MESSAGE" value="LABA2CDELANNAYA. TOP" />
+  </component>
+</project>
