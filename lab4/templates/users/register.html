@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block content %}
+<form method="post">
+  <div class="mb-3">
+    <label for="loginInput" class="form-label">Логин</label>
+    <input
+      type="text"
+      class="form-control {% if errors.login %}is-invalid{% endif %}"
+      id="loginInput"
+      name="loginInput"
+      placeholder="Логин"
+      value="{{ login }}"
+      required
+    />
+    {% if errors.login %}
+    <div class="invalid-feedback">{{ errors.login }}</div>
+    {% endif %}
+  </div>
+  <div class="mb-3">
+    <label for="passwordInput" class="form-label">Пароль</label>
+    <input
+      type="password"
+      class="form-control {% if errors.password %}is-invalid{% endif %}"
+      id="passwordInput"
+      name="passwordInput"
+      placeholder="Пароль"
+      required
+    />
+    {% if errors.password %}
+    <div class="invalid-feedback">{{ errors.password }}</div>
+    {% endif %}
+  </div>
+  <div class="mb-3">
+    <label for="firstNameInput" class="form-label">Имя</label>
+    <input
+      type="text"
+      class="form-control {% if errors.first_name %}is-invalid{% endif %}"
+      id="firstNameInput"
+      name="firstNameInput"
+      placeholder="Имя"
+      value="{{ first_name }}"
+      required
+    />
+    {% if errors.first_name %}
+    <div class="invalid-feedback">{{ errors.first_name }}</div>
+    {% endif %}
+  </div>
+  <div class="mb-3">
+    <label for="lastNameInput" class="form-label">Фамилия</label>
+    <input
+      type="text"
+      class="form-control {% if errors.last_name %}is-invalid{% endif %}"
+      id="lastNameInput"
+      name="lastNameInput"
+      placeholder="Фамилия"
+      value="{{ last_name }}"
+      required
+    />
+    {% if errors.last_name %}
+    <div class="invalid-feedback">{{ errors.last_name }}</div>
+    {% endif %}
+  </div>
+  <div class="mb-3">
+    <label for="middleNameInput" class="form-label">Отчество</label>
+    <input
+      type="text"
+      class="form-control"
+      id="middleNameInput"
+      name="middleNameInput"
+      placeholder="Отчество"
+      value="{{ middle_name }}"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+{% endblock %}
