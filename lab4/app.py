@@ -7,6 +7,7 @@ from mysql_db import MySQL
 login_manager = LoginManager()
 
 app = Flask(__name__)
+application = app
 
 app.config.from_pyfile('config.py')
 
