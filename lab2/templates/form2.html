@@ -14,7 +14,7 @@
     {% if phone_number and not error_message %}
     <div class="mb-3">
         <label class="form-label">Отформатированный номер:</label>
-        <input type="text" readonly class="form-control-plaintext" value="{{ phone_number }}">
+        {{ formatted_phone }}
     </div>
     {% endif %}
     <button type="submit" class="btn btn-primary">Проверить</button>

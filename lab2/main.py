@@ -22,7 +22,12 @@ def headers():
 @app.route('/cookies')
 def cookies():
     resp = make_response(render_template('cookies.html', request=request))
+    if 'test_cookie' in request.cookies:
+        resp.delete_cookie('test_cookie')
+    else:
+        resp.set_cookie('test_cookie', 'vakula')
     return resp
+
 
 
 @app.route('/form', methods=['GET', 'POST'])
@@ -57,31 +62,45 @@ def calc():
     return render_template('calc.html', result=result)
 
 
+def is_valid_phone_number(phone):
+    for char in phone:
+        if char not in '0123456789 ()-+.':
+            return False, "Недопустимый ввод. В номере телефона встречаются недопустимые символы."
+
+    digits = ''.join(filter(str.isdigit, phone))
+    if phone.startswith('+7') or phone.startswith('8'):
+        if len(digits) != 11:
+            return False, "Недопустимый ввод. Неверное количество цифр."
+    else:
+        if len(digits) != 10:
+            return False, "Недопустимый ввод. Неверное количество цифр."
+
+    return True, None
+
+
+def format_phone_number(phone):
+    digits = ''.join(filter(str.isdigit, phone))
+
+    if digits.startswith('+7'):
+        digits = digits[2:]
+    elif digits.startswith(('7', '8')):
+        digits = digits[1:]
+
+    return f'8-{digits[:3]}-{digits[3:6]}-{digits[6:8]}-{digits[8:]}'
 @app.route('/form2', methods=['GET', 'POST'])
 def form2():
-    error_message = ''
-    phone_number = ''
+    if request.method == 'GET':
+        return render_template('form2.html')
+    phone_number = request.form['param1']
+    is_valid, error_message = is_valid_phone_number(phone_number)
+    if is_valid:
+        formatted_phone = format_phone_number(phone_number)
+        print(formatted_phone)
+        return render_template('form2.html', phone_number=phone_number, formatted_phone=formatted_phone)
+    else:
+        return render_template('form2.html', phone_number=phone_number, error_message=error_message)
 
-    if request.method == 'POST':
-        phone_number = request.form.get('param1')
-        cleaned_number = (phone_number.replace(' ', '').replace('.', '')
-                          .replace('(', '').replace(')', '')
-                          .replace('-', '').replace('+', '')
-        )
 
-        if not cleaned_number.isdigit():
-            error_message = 'Недопустимый ввод. В номере телефона встречаются недопустимые символы.'
-
-        elif len(cleaned_number) not in [10, 11]:
-            error_message = 'Недопустимый ввод. Неверное количество цифр.'
-
-        elif phone_number.startswith(('8', '+7')) and len(cleaned_number) == 11:
-            phone_number = '8-' + cleaned_number[1:4] + '-' + cleaned_number[4:7] + '-' + cleaned_number[7:9] + '-' + cleaned_number[9:]
-
-        elif len(cleaned_number) == 10:
-            phone_number = cleaned_number[0:3] + '-' + cleaned_number[3:6] + '-' + cleaned_number[6:8] + '-' + cleaned_number[8:]
-
-    return render_template('form2.html', error_message=error_message, phone_number=phone_number, request=request)
 
 
 if __name__ == '__main__':
