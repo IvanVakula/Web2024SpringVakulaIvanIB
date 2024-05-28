@@ -208,7 +208,17 @@ def change_password():
 
         password_status, password_error = check_password(new_password1)
         if not password_status:
-            errors['newPassword1'] = f'Ошибка: {password_error}'
+            errors['newPassword1'] = (f'Ошибка: {password_error}\n\n'
+                                      'Пароль должен соответствовать требованиям: \n'
+                                      'Не менее 8 символов\n'
+                                      'Не более 128 символов\n'
+                                      'Как минимум одна заглавная и одна строчная буква\n'
+                                      'Только латинские или кириллические буквы\n'
+                                      'Как минимум одна цифра\n'
+                                      'Только арабские цифры\n'
+                                      'Без пробелов\n'
+                                      'Другие допустимые символы:~ ! ? @ # $ % ^ & * _ - + ( ) [ ] { } > < |  . , : ;\n')
+
             return render_template('users/change_password.html', errors=errors)
 
         try:
