@@ -187,6 +187,7 @@ def logout():
 @app.route('/users/change_password', methods=['GET', 'POST'])
 @login_required
 def change_password():
+    errors = {}
     if request.method == 'POST':
         user_id = current_user.get_id()
         current_password = request.form.get('currentPassword')
@@ -197,32 +198,30 @@ def change_password():
         cursor.execute('SELECT password_hash FROM users WHERE id = %s', (user_id,))
         user = cursor.fetchone()
         if not user or not hashlib.sha256(current_password.encode()).hexdigest() == user.password_hash:
-            flash('Неверный текущий пароль', 'danger')
-            return render_template('users/change_password.html')
+            errors['currentPassword'] = 'Неверный текущий пароль'
+            return render_template('users/change_password.html', errors=errors)
 
         # Проверка нового пароля
         if new_password1 != new_password2:
-            flash('Новые пароли не совпадают', 'danger')
-            return render_template('users/change_password.html')
+            errors['newPassword2'] = 'Новые пароли не совпадают'
+            return render_template('users/change_password.html', errors=errors)
 
         password_status, password_error = check_password(new_password1)
         if not password_status:
-            flash(f'Ошибка: {password_error}', 'danger')
-            return render_template('users/change_password.html')
+            errors['newPassword1'] = f'Ошибка: {password_error}'
+            return render_template('users/change_password.html', errors=errors)
 
         try:
             with mysql.connection().cursor(named_tuple=True) as cursor:
                 cursor.execute('UPDATE users SET password_hash = SHA2(%s, 256) WHERE id = %s', (new_password1, user_id,))
                 mysql.connection().commit()
-                flash('Пароль успешно изменен', 'success')
                 return redirect(url_for('view_user', user_id=user_id))
         except Exception as e:
             mysql.connection().rollback()
-            flash('Ошибка при изменении пароля', 'danger')
-            return render_template('users/change_password.html')
+            errors['database'] = 'Ошибка при изменении пароля'
+            return render_template('users/change_password.html', errors=errors)
     else:
-        return render_template('users/change_password.html')
-
+        return render_template('users/change_password.html',errors={})
 
 def check_password(password):
     if len(password) < 8 or len(password) > 128:
@@ -253,6 +252,9 @@ def check_password(password):
         return False, 'Пароль должен содержать хотя бы одну цифру'
 
     return True, ''
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 if __name__ == '__main__':
