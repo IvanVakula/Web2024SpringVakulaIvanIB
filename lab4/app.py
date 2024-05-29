@@ -92,13 +92,21 @@ def register():
             if not all(char in valid_chars for char in login):
                 errors['login'] = 'Логин должен состоять только из латинских букв и цифр'
 
-
     if not password:
         errors['password'] = 'Поле не может быть пустым'
     else:
         password_status, password_error = check_password(password)
         if not password_status:
-            errors['password'] = password_error
+            errors['password'] = (f'Ошибка: {password_error}\n\n'
+                                  'Пароль должен соответствовать требованиям: \n'
+                                  'Не менее 8 символов\n'
+                                  'Не более 128 символов\n'
+                                  'Как минимум одна заглавная и одна строчная буква\n'
+                                  'Только латинские или кириллические буквы\n'
+                                  'Как минимум одна цифра\n'
+                                  'Только арабские цифры\n'
+                                  'Без пробелов\n'
+                                  'Другие допустимые символы:~ ! ? @ # $ % ^ & * _ - + ( ) [ ] { } > < |  . , : ;\n')
 
     if not first_name:
         errors['first_name'] = 'Поле не может быть пустым'

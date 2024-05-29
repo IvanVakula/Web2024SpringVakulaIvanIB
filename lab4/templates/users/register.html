@@ -25,9 +25,10 @@
       placeholder="Пароль"
       required
     />
-    {% if errors.password %}
-    <div class="invalid-feedback">{{ errors.password }}</div>
+     {% if errors.password %}
+    <div style="white-space: pre;" class="invalid-feedback">{{ errors.password }}</div>
     {% endif %}
+
   </div>
   <div class="mb-3">
     <label for="firstNameInput" class="form-label">Имя</label>
